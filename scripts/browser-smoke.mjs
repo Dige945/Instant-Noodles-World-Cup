@@ -86,6 +86,11 @@ try {
     () => !document.querySelector(".hero-result-actions .button-primary")?.disabled,
     { timeout: 5000 },
   );
+  await page.waitForFunction(
+    () => [...document.querySelectorAll(".share-poster img")]
+      .every((image) => image.complete && image.naturalWidth > 0),
+    { timeout: 10000 },
+  );
   if (artifactDir) {
     await page.evaluate(() => {
       const wrapper = document.querySelector(".poster-offscreen");
@@ -105,13 +110,13 @@ try {
       }
     });
   }
-  await page.evaluate(() => {
-    const originalClick = HTMLAnchorElement.prototype.click;
-    HTMLAnchorElement.prototype.click = function capturePosterDownload() {
-      if (this.download.endsWith(".png")) window.__posterDownload = this.href;
-      return originalClick.call(this);
-    };
-  });
+  if (process.env.SMOKE_BLOCK_POSTER_IMAGE_REQUESTS === "1") {
+    await page.setRequestInterception(true);
+    page.on("request", (request) => {
+      if (request.url().includes("/images/noodles/")) request.abort();
+      else request.continue();
+    });
+  }
   await page.click(".hero-result-actions .button-primary");
   await page.waitForFunction(
     () => {
@@ -122,8 +127,8 @@ try {
   );
   await page.waitForSelector(".poster-preview-dialog");
   if (artifactDir) await page.screenshot({ path: path.join(artifactDir, "poster-modal-mobile.png") });
+  const exportedPoster = await page.$eval(".poster-preview-actions a[download]", (link) => link.href);
   await page.click(".poster-preview-actions a[download]");
-  const exportedPoster = await page.evaluate(() => window.__posterDownload ?? "");
   if (!exportedPoster.startsWith("data:image/png;base64,")) throw new Error("未捕获到导出的海报 PNG");
   const exportedPosterBytes = Buffer.from(exportedPoster.split(",")[1], "base64");
   if (artifactDir) await fs.writeFile(path.join(artifactDir, "exported-poster.png"), exportedPosterBytes);

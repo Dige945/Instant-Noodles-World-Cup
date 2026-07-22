@@ -85,27 +85,46 @@ export function SharePoster({ tournament, personality }: SharePosterProps) {
     return () => document.removeEventListener("keydown", closeOnEscape);
   }, [posterDataUrl]);
 
+  async function inlinePosterImages(root: HTMLElement) {
+    const images = Array.from(root.querySelectorAll("img"));
+    await Promise.all(images.map(async (image) => {
+      if (!image.complete) {
+        await new Promise<void>((resolve, reject) => {
+          image.addEventListener("load", () => resolve(), { once: true });
+          image.addEventListener("error", () => reject(new Error(`图片加载失败：${image.src}`)), { once: true });
+        });
+      }
+      if (!image.naturalWidth || !image.naturalHeight) throw new Error(`图片内容为空：${image.src}`);
+      await image.decode();
+      if (image.src.startsWith("data:")) return;
+
+      const isChampion = Boolean(image.closest(".poster-package"));
+      const size = isChampion ? 480 : 72;
+      const canvas = document.createElement("canvas");
+      canvas.width = size;
+      canvas.height = size;
+      const context = canvas.getContext("2d");
+      if (!context) throw new Error("浏览器不支持图片内嵌处理");
+      context.fillStyle = "#ffffff";
+      context.fillRect(0, 0, size, size);
+      context.drawImage(image, 0, 0, size, size);
+      image.removeAttribute("srcset");
+      image.src = canvas.toDataURL("image/jpeg", isChampion ? 0.92 : 0.82);
+      await image.decode();
+    }));
+  }
+
   async function generatePoster() {
     if (!posterRef.current || exporting) return;
     setExporting(true);
     setMessage("正在准备海报素材…");
     try {
       await document.fonts.ready;
-      const images = Array.from(posterRef.current.querySelectorAll("img"));
-      await Promise.all(images.map(async (image) => {
-        if (!image.complete) {
-          await new Promise<void>((resolve, reject) => {
-            image.addEventListener("load", () => resolve(), { once: true });
-            image.addEventListener("error", () => reject(new Error(`图片加载失败：${image.src}`)), { once: true });
-          });
-        }
-        if (!image.naturalWidth) throw new Error(`图片内容为空：${image.src}`);
-        await image.decode();
-      }));
       setMessage("正在绘制高清海报…");
+      await inlinePosterImages(posterRef.current);
       const dataUrl = await Promise.race([
         toPng(posterRef.current, {
-          cacheBust: true,
+          cacheBust: false,
           skipFonts: true,
           pixelRatio: 2,
           width: 540,
