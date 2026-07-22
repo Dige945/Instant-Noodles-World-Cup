@@ -1,0 +1,737 @@
+[
+  {
+    "id": "ksf-hongshao",
+    "name": "红烧牛肉面",
+    "brand": "康师傅",
+    "image": "/images/noodles/ksf-hongshao.webp",
+    "type": "bag",
+    "flavorTags": [
+      "红烧",
+      "牛肉",
+      "经典"
+    ],
+    "category": "beef",
+    "popularity": 100,
+    "isBackup": false
+  },
+  {
+    "id": "ty-laotan",
+    "name": "老坛酸菜牛肉面",
+    "brand": "统一",
+    "image": "/images/noodles/ty-laotan.webp",
+    "type": "bag",
+    "flavorTags": [
+      "酸菜",
+      "牛肉",
+      "酸爽"
+    ],
+    "category": "sour-spicy",
+    "popularity": 98,
+    "isBackup": false
+  },
+  {
+    "id": "bx-laomuji",
+    "name": "老母鸡汤面",
+    "brand": "白象",
+    "image": "/images/noodles/bx-laomuji.webp",
+    "type": "bag",
+    "flavorTags": [
+      "鸡汤",
+      "浓汤",
+      "暖胃"
+    ],
+    "category": "chicken",
+    "popularity": 94,
+    "isBackup": false
+  },
+  {
+    "id": "tdr-tungu",
+    "name": "日式豚骨拉面",
+    "brand": "汤达人",
+    "image": "/images/noodles/tdr-tungu.webp",
+    "type": "bag",
+    "flavorTags": [
+      "豚骨",
+      "浓汤",
+      "日式"
+    ],
+    "category": "other",
+    "popularity": 96,
+    "isBackup": false
+  },
+  {
+    "id": "hm-cjx",
+    "name": "三鲜伊面",
+    "brand": "华丰",
+    "image": "/images/noodles/hm-cjx.webp",
+    "type": "bag",
+    "flavorTags": [
+      "三鲜",
+      "怀旧",
+      "清香"
+    ],
+    "category": "nostalgic",
+    "popularity": 91,
+    "isBackup": false
+  },
+  {
+    "id": "bj-fbm",
+    "name": "麻辣方便面",
+    "brand": "北京方便面",
+    "image": "/images/noodles/bj-fbm.webp",
+    "type": "snack",
+    "flavorTags": [
+      "麻辣",
+      "干吃",
+      "怀旧"
+    ],
+    "category": "nostalgic",
+    "popularity": 89,
+    "isBackup": false
+  },
+  {
+    "id": "hwd-hx",
+    "name": "海鲜风味杯面",
+    "brand": "合味道",
+    "image": "/images/noodles/hwd-hx.webp",
+    "type": "cup",
+    "flavorTags": [
+      "海鲜",
+      "杯面",
+      "鲜香"
+    ],
+    "category": "seafood",
+    "popularity": 93,
+    "isBackup": false
+  },
+  {
+    "id": "cqy-dyz",
+    "name": "猪骨浓汤味方便面",
+    "brand": "出前一丁",
+    "image": "/images/noodles/cqy-dyz.webp",
+    "type": "bag",
+    "flavorTags": [
+      "酱油",
+      "日式",
+      "清汤"
+    ],
+    "category": "other",
+    "popularity": 88,
+    "isBackup": false
+  },
+  {
+    "id": "jml-hlx",
+    "name": "红烧牛肉面",
+    "brand": "今麦郎",
+    "image": "/images/noodles/jml-hlx.webp",
+    "type": "bag",
+    "flavorTags": [
+      "红烧",
+      "牛肉",
+      "劲道"
+    ],
+    "category": "beef",
+    "popularity": 87,
+    "isBackup": false
+  },
+  {
+    "id": "nhc-hs",
+    "name": "意式红烩味干脆面",
+    "brand": "小浣熊",
+    "image": "/images/noodles/nhc-hs.webp",
+    "type": "snack",
+    "flavorTags": [
+      "干脆面",
+      "红烧",
+      "童年"
+    ],
+    "category": "nostalgic",
+    "popularity": 90,
+    "isBackup": false
+  },
+  {
+    "id": "mfs-ks",
+    "name": "烤肉味干脆面",
+    "brand": "魔法士",
+    "image": "/images/noodles/mfs-ks.webp",
+    "type": "snack",
+    "flavorTags": [
+      "烤肉",
+      "干吃",
+      "童年"
+    ],
+    "category": "nostalgic",
+    "popularity": 81,
+    "isBackup": false
+  },
+  {
+    "id": "xy-xr",
+    "name": "蟹黄面",
+    "brand": "幸运",
+    "image": "/images/noodles/xy-xr.webp",
+    "type": "bag",
+    "flavorTags": [
+      "蟹黄",
+      "鲜香",
+      "经典"
+    ],
+    "category": "seafood",
+    "popularity": 75,
+    "isBackup": false
+  },
+  {
+    "id": "ksf-xlr",
+    "name": "香辣牛肉面",
+    "brand": "康师傅",
+    "image": "/images/noodles/ksf-xlr.webp",
+    "type": "bag",
+    "flavorTags": [
+      "香辣",
+      "牛肉",
+      "浓香"
+    ],
+    "category": "spicy",
+    "popularity": 95,
+    "isBackup": false
+  },
+  {
+    "id": "ty-hsj",
+    "name": "红烧牛肉面",
+    "brand": "统一",
+    "image": "/images/noodles/ty-hsj.webp",
+    "type": "bag",
+    "flavorTags": [
+      "红烧",
+      "牛肉",
+      "经典"
+    ],
+    "category": "beef",
+    "popularity": 90,
+    "isBackup": false
+  },
+  {
+    "id": "bx-dg",
+    "name": "大骨面原汁猪骨味",
+    "brand": "白象",
+    "image": "/images/noodles/bx-dg.webp",
+    "type": "bag",
+    "flavorTags": [
+      "骨汤",
+      "浓香",
+      "劲道"
+    ],
+    "category": "other",
+    "popularity": 85,
+    "isBackup": false
+  },
+  {
+    "id": "tdr-ls",
+    "name": "罗宋汤面",
+    "brand": "汤达人",
+    "image": "/images/noodles/tdr-ls.webp",
+    "type": "bag",
+    "flavorTags": [
+      "番茄",
+      "酸甜",
+      "浓汤"
+    ],
+    "category": "other",
+    "popularity": 83,
+    "isBackup": false
+  },
+  {
+    "id": "hwd-xl",
+    "name": "香辣海鲜杯面",
+    "brand": "合味道",
+    "image": "/images/noodles/hwd-xl.webp",
+    "type": "cup",
+    "flavorTags": [
+      "香辣",
+      "海鲜",
+      "杯面"
+    ],
+    "category": "seafood",
+    "popularity": 84,
+    "isBackup": false
+  },
+  {
+    "id": "cqy-hy",
+    "name": "黑蒜油猪骨汤面",
+    "brand": "出前一丁",
+    "image": "/images/noodles/cqy-hy.webp",
+    "type": "bag",
+    "flavorTags": [
+      "黑蒜",
+      "豚骨",
+      "浓汤"
+    ],
+    "category": "other",
+    "popularity": 86,
+    "isBackup": false
+  },
+  {
+    "id": "jml-lt",
+    "name": "老坛酸菜牛肉面",
+    "brand": "今麦郎",
+    "image": "/images/noodles/jml-lt.webp",
+    "type": "bag",
+    "flavorTags": [
+      "酸菜",
+      "牛肉",
+      "酸辣"
+    ],
+    "category": "sour-spicy",
+    "popularity": 79,
+    "isBackup": false
+  },
+  {
+    "id": "nissin-yb",
+    "name": "UFO铁板牛肉炒面",
+    "brand": "日清",
+    "image": "/images/noodles/nissin-yb.webp",
+    "type": "dry",
+    "flavorTags": [
+      "炒面",
+      "牛肉",
+      "铁板"
+    ],
+    "category": "dry-noodle",
+    "popularity": 89,
+    "isBackup": false
+  },
+  {
+    "id": "ksf-gjm",
+    "name": "干拌面红烧牛肉味",
+    "brand": "康师傅",
+    "image": "/images/noodles/ksf-gjm.webp",
+    "type": "dry",
+    "flavorTags": [
+      "干拌",
+      "牛肉",
+      "酱香"
+    ],
+    "category": "dry-noodle",
+    "popularity": 88,
+    "isBackup": false
+  },
+  {
+    "id": "bx-yz",
+    "name": "羊肉汤面",
+    "brand": "白象",
+    "image": "/images/noodles/bx-yz.webp",
+    "type": "bag",
+    "flavorTags": [
+      "羊汤",
+      "浓香",
+      "暖胃"
+    ],
+    "category": "other",
+    "popularity": 80,
+    "isBackup": false
+  },
+  {
+    "id": "qh-jd",
+    "name": "番茄鸡蛋面",
+    "brand": "茄皇",
+    "image": "/images/noodles/qh-jd.webp",
+    "type": "bag",
+    "flavorTags": [
+      "金汤",
+      "肥牛",
+      "酸香"
+    ],
+    "category": "sour-spicy",
+    "popularity": 85,
+    "isBackup": false
+  },
+  {
+    "id": "jml-yf",
+    "name": "一桶半香辣牛肉面",
+    "brand": "今麦郎",
+    "image": "/images/noodles/jml-yf.webp",
+    "type": "cup",
+    "flavorTags": [
+      "大份",
+      "香辣",
+      "牛肉"
+    ],
+    "category": "spicy",
+    "popularity": 82,
+    "isBackup": false
+  },
+  {
+    "id": "hm-mr",
+    "name": "三鲜伊面",
+    "brand": "华丰",
+    "image": "/images/noodles/hm-mr.webp",
+    "type": "bag",
+    "flavorTags": [
+      "酸辣",
+      "伊面",
+      "怀旧"
+    ],
+    "category": "sour-spicy",
+    "popularity": 72,
+    "isBackup": false
+  },
+  {
+    "id": "ksf-lt",
+    "name": "老坛酸菜牛肉面",
+    "brand": "康师傅",
+    "image": "/images/noodles/ksf-lt.webp",
+    "type": "bag",
+    "flavorTags": [
+      "酸菜",
+      "牛肉",
+      "酸爽"
+    ],
+    "category": "sour-spicy",
+    "popularity": 87,
+    "isBackup": true
+  },
+  {
+    "id": "ty-tj",
+    "name": "茄皇番茄牛肉面",
+    "brand": "统一",
+    "image": "/images/noodles/ty-tj.webp",
+    "type": "bag",
+    "flavorTags": [
+      "番茄",
+      "牛肉",
+      "酸甜"
+    ],
+    "category": "beef",
+    "popularity": 88,
+    "isBackup": true
+  },
+  {
+    "id": "bx-hl",
+    "name": "韩式火鸡拌面",
+    "brand": "白象",
+    "image": "/images/noodles/bx-hl.webp",
+    "type": "dry",
+    "flavorTags": [
+      "火鸡",
+      "拌面",
+      "辣"
+    ],
+    "category": "dry-noodle",
+    "popularity": 77,
+    "isBackup": true
+  },
+  {
+    "id": "tdr-sj",
+    "name": "酸酸辣辣豚骨面",
+    "brand": "汤达人",
+    "image": "/images/noodles/tdr-sj.webp",
+    "type": "bag",
+    "flavorTags": [
+      "酸辣",
+      "豚骨",
+      "浓汤"
+    ],
+    "category": "sour-spicy",
+    "popularity": 81,
+    "isBackup": true
+  },
+  {
+    "id": "hwd-dg",
+    "name": "冬阴功风味杯面",
+    "brand": "合味道",
+    "image": "/images/noodles/hwd-dg.webp",
+    "type": "cup",
+    "flavorTags": [
+      "冬阴功",
+      "酸辣",
+      "海鲜"
+    ],
+    "category": "seafood",
+    "popularity": 83,
+    "isBackup": true
+  },
+  {
+    "id": "cqy-mx",
+    "name": "麻油味方便面",
+    "brand": "出前一丁",
+    "image": "/images/noodles/cqy-mx.webp",
+    "type": "bag",
+    "flavorTags": [
+      "麻油",
+      "经典",
+      "日式"
+    ],
+    "category": "nostalgic",
+    "popularity": 84,
+    "isBackup": true
+  },
+  {
+    "id": "jml-sf",
+    "name": "红烧牛肉面",
+    "brand": "今麦郎",
+    "image": "/images/noodles/jml-sf.webp",
+    "type": "bag",
+    "flavorTags": [
+      "三鲜",
+      "清香",
+      "经典"
+    ],
+    "category": "nostalgic",
+    "popularity": 70,
+    "isBackup": true
+  },
+  {
+    "id": "mfs-jr",
+    "name": "五种混合口味干脆面",
+    "brand": "魔法士",
+    "image": "/images/noodles/mfs-jr.webp",
+    "type": "snack",
+    "flavorTags": [
+      "椒盐",
+      "鸡肉",
+      "干吃"
+    ],
+    "category": "nostalgic",
+    "popularity": 74,
+    "isBackup": true
+  },
+  {
+    "id": "nhc-sy",
+    "name": "销魂香辣蟹味干脆面",
+    "brand": "小浣熊",
+    "image": "/images/noodles/nhc-sy.webp",
+    "type": "snack",
+    "flavorTags": [
+      "香葱",
+      "干吃",
+      "童年"
+    ],
+    "category": "nostalgic",
+    "popularity": 80,
+    "isBackup": true
+  },
+  {
+    "id": "hm-xy",
+    "name": "三鲜伊面",
+    "brand": "华丰",
+    "image": "/images/noodles/hm-xy.webp",
+    "type": "bag",
+    "flavorTags": [
+      "香油",
+      "伊面",
+      "清香"
+    ],
+    "category": "nostalgic",
+    "popularity": 67,
+    "isBackup": true
+  },
+  {
+    "id": "ksf-xianxia",
+    "name": "鲜虾鱼板面",
+    "brand": "康师傅",
+    "image": "/images/noodles/ksf-xianxia.webp",
+    "type": "bag",
+    "flavorTags": [
+      "鲜虾",
+      "鱼板",
+      "海鲜"
+    ],
+    "category": "seafood",
+    "popularity": 94,
+    "isBackup": false
+  },
+  {
+    "id": "ksf-tengjiao",
+    "name": "藤椒牛肉面",
+    "brand": "康师傅",
+    "image": "/images/noodles/ksf-tengjiao.webp",
+    "type": "bag",
+    "flavorTags": [
+      "藤椒",
+      "牛肉",
+      "麻辣"
+    ],
+    "category": "spicy",
+    "popularity": 91,
+    "isBackup": false
+  },
+  {
+    "id": "ksf-congxiang",
+    "name": "葱香排骨面",
+    "brand": "康师傅",
+    "image": "/images/noodles/ksf-congxiang.webp",
+    "type": "bag",
+    "flavorTags": [
+      "葱香",
+      "排骨",
+      "经典"
+    ],
+    "category": "other",
+    "popularity": 88,
+    "isBackup": false
+  },
+  {
+    "id": "ksf-suanla",
+    "name": "老陈醋酸辣牛肉面",
+    "brand": "康师傅",
+    "image": "/images/noodles/ksf-suanla.webp",
+    "type": "bag",
+    "flavorTags": [
+      "老陈醋",
+      "酸辣",
+      "牛肉"
+    ],
+    "category": "sour-spicy",
+    "popularity": 86,
+    "isBackup": false
+  },
+  {
+    "id": "ksf-jintang",
+    "name": "酸香金汤肥牛面",
+    "brand": "康师傅",
+    "image": "/images/noodles/ksf-jintang.webp",
+    "type": "bag",
+    "flavorTags": [
+      "金汤",
+      "肥牛",
+      "酸香"
+    ],
+    "category": "sour-spicy",
+    "popularity": 87,
+    "isBackup": false
+  },
+  {
+    "id": "ty-rouzao",
+    "name": "肉燥面",
+    "brand": "统一",
+    "image": "/images/noodles/ty-rouzao.webp",
+    "type": "bag",
+    "flavorTags": [
+      "肉燥",
+      "台式",
+      "经典"
+    ],
+    "category": "nostalgic",
+    "popularity": 91,
+    "isBackup": false
+  },
+  {
+    "id": "ksf-xianggu",
+    "image": "/images/noodles/ksf-xianggu.webp",
+    "isBackup": false,
+    "name": "香菇炖鸡面",
+    "brand": "康师傅",
+    "type": "bag",
+    "flavorTags": [
+      "香菇",
+      "炖鸡",
+      "经典"
+    ],
+    "category": "chicken",
+    "popularity": 93
+  },
+  {
+    "id": "gzm-shacha",
+    "image": "/images/noodles/gzm-shacha.webp",
+    "isBackup": false,
+    "name": "沙嗲牛肉味碗面",
+    "brand": "公仔面",
+    "type": "cup",
+    "flavorTags": [
+      "沙嗲",
+      "牛肉",
+      "港式"
+    ],
+    "category": "beef",
+    "popularity": 86
+  },
+  {
+    "id": "gzm-tungu",
+    "image": "/images/noodles/gzm-tungu.webp",
+    "isBackup": false,
+    "name": "猪骨浓汤味碗面",
+    "brand": "公仔面",
+    "type": "cup",
+    "flavorTags": [
+      "猪骨",
+      "浓汤",
+      "港式"
+    ],
+    "category": "other",
+    "popularity": 84
+  },
+  {
+    "id": "gzm-malatang",
+    "image": "/images/noodles/gzm-malatang.webp",
+    "isBackup": false,
+    "name": "麻辣汤味碗面",
+    "brand": "公仔面",
+    "type": "cup",
+    "flavorTags": [
+      "麻辣",
+      "汤面",
+      "港式"
+    ],
+    "category": "spicy",
+    "popularity": 82
+  },
+  {
+    "id": "gzm-wuxiang",
+    "image": "/images/noodles/gzm-wuxiang.webp",
+    "isBackup": false,
+    "name": "五香肉丁味碗面",
+    "brand": "公仔面",
+    "type": "cup",
+    "flavorTags": [
+      "五香",
+      "肉丁",
+      "港式"
+    ],
+    "category": "other",
+    "popularity": 85
+  },
+  {
+    "id": "gzm-hujiao",
+    "image": "/images/noodles/gzm-hujiao.webp",
+    "isBackup": false,
+    "name": "胡椒猪肚汤味碗面",
+    "brand": "公仔面",
+    "type": "cup",
+    "flavorTags": [
+      "胡椒",
+      "猪肚",
+      "港式"
+    ],
+    "category": "other",
+    "popularity": 84
+  },
+  {
+    "id": "ty-baobao",
+    "image": "/images/noodles/ty-baobao.webp",
+    "isBackup": false,
+    "name": "红油爆椒牛肉面",
+    "brand": "统一",
+    "type": "bag",
+    "flavorTags": [
+      "红油",
+      "爆椒",
+      "牛肉"
+    ],
+    "category": "spicy",
+    "popularity": 89
+  },
+  {
+    "id": "gzm-mayou",
+    "image": "/images/noodles/gzm-mayou.webp",
+    "isBackup": false,
+    "name": "麻油上素味碗面",
+    "brand": "公仔面",
+    "type": "cup",
+    "flavorTags": [
+      "麻油",
+      "上素",
+      "港式"
+    ],
+    "category": "nostalgic",
+    "popularity": 83
+  }
+]

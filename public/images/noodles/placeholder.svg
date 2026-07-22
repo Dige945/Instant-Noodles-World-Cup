@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" role="img" aria-label="方便面包装占位图">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8f1d20"/>
+      <stop offset="0.55" stop-color="#c9412b"/>
+      <stop offset="1" stop-color="#f3b83f"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-opacity=".22"/></filter>
+  </defs>
+  <rect width="600" height="720" rx="54" fill="url(#bg)"/>
+  <circle cx="300" cy="398" r="184" fill="#fff1cf" filter="url(#shadow)"/>
+  <path d="M164 389c71 84 205 84 276 0" fill="none" stroke="#6f2c1c" stroke-width="19" stroke-linecap="round"/>
+  <path d="M185 353c58 54 172 54 230 0M203 325c48 37 146 37 194 0" fill="none" stroke="#e6a72d" stroke-width="16" stroke-linecap="round"/>
+  <path d="M218 247c-34-39 26-52-2-96M301 236c-34-39 26-52-2-96M384 247c-34-39 26-52-2-96" fill="none" stroke="#fff1cf" stroke-width="13" stroke-linecap="round" opacity=".9"/>
+  <text x="300" y="602" fill="#fffaf0" font-family="sans-serif" font-size="38" font-weight="700" text-anchor="middle">方便面世界杯</text>
+  <text x="300" y="650" fill="#fff1cf" font-family="sans-serif" font-size="24" text-anchor="middle">开发阶段包装占位图</text>
+</svg>

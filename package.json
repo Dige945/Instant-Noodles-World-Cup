@@ -1,0 +1,51 @@
+{
+  "name": "instant-noodle-world-cup",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "generate:og": "node scripts/generate-og.mjs",
+    "fetch:noodle-images": "node scripts/fetch-noodle-images.mjs",
+    "fetch:exact-images": "node scripts/fetch-exact-noodle-images.mjs",
+    "contact-sheet": "node scripts/generate-noodle-contact-sheet.mjs",
+    "smoke:browser": "node scripts/browser-smoke.mjs",
+    "preview": "serve out"
+  },
+  "dependencies": {
+    "html-to-image": "^1.11.13",
+    "lucide-react": "^0.468.0",
+    "motion": "^12.42.2",
+    "next": "16.2.11",
+    "qrcode": "^1.5.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^22.15.0",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "16.2.11",
+    "jsdom": "^27.4.0",
+    "puppeteer-core": "^25.3.0",
+    "serve": "^14.2.5",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.113.0"
+  }
+}

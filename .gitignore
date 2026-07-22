@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+coverage/
+.env*
+!.env.example
+*.log
+*.tsbuildinfo
+.DS_Store
+.wrangler/
+.codex-chrome*/
+mobile-home*.png
+artifacts/
