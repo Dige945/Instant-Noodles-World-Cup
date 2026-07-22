@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Crown, RotateCcw, Sparkles, Trophy } from "lucide-react";
 import { BracketView } from "@/components/bracket-view";
 import { ChampionRoute } from "@/components/champion-route";
@@ -11,6 +12,7 @@ import { getFinalFour } from "@/lib/tournament";
 import { useTournamentStore } from "@/store/tournament-store";
 
 export default function ResultPage() {
+  const router = useRouter();
   const hydrated = useTournamentStore((state) => state.hydrated);
   const tournament = useTournamentStore((state) => state.tournament);
   const undo = useTournamentStore((state) => state.undo);
@@ -26,8 +28,8 @@ export default function ResultPage() {
     .map(getNoodle)
     .filter((item) => item !== undefined);
 
-  function handleUndoFinal() { undo(); window.location.assign("/tournament/"); }
-  function handleRestart() { resetTournament(); window.location.assign("/setup/"); }
+  function handleUndoFinal() { undo(); router.push("/tournament/"); }
+  function handleRestart() { resetTournament(); router.push("/setup/"); }
 
   return (
     <main className="result-page">

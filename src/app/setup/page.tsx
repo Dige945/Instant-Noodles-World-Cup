@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowRight, Check, RefreshCw, Shuffle, Sparkles } from "lucide-react";
 import { getNoodle } from "@/lib/noodles";
 import { useTournamentStore } from "@/store/tournament-store";
@@ -30,6 +31,7 @@ function SelectionCard({ noodle, selected, onClick, badge, onReplace }: {
 }
 
 export default function SetupPage() {
+  const router = useRouter();
   const draftIds = useTournamentStore((state) => state.draftContestants);
   const phase = useTournamentStore((state) => state.qualificationPhase);
   const groupIndex = useTournamentStore((state) => state.groupIndex);
@@ -43,7 +45,10 @@ export default function SetupPage() {
   const toggleRevivalSelection = useTournamentStore((state) => state.toggleRevivalSelection);
   const startTournament = useTournamentStore((state) => state.startTournament);
 
-  useEffect(() => initializeDraft(), [initializeDraft]);
+  useEffect(() => {
+    initializeDraft();
+    router.prefetch("/tournament/");
+  }, [initializeDraft, router]);
 
   if (draftIds.length !== 48) {
     return <main className="empty-page"><div className="loading-panel">正在抽取 48 款参赛方便面…</div></main>;
@@ -64,7 +69,7 @@ export default function SetupPage() {
   }
 
   function handleStart() {
-    if (startTournament()) window.location.assign("/tournament/");
+    if (startTournament()) router.push("/tournament/");
   }
 
   if (phase === "revival") {

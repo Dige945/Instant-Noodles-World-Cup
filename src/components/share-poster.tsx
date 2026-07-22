@@ -20,6 +20,7 @@ export function SharePoster({ tournament, personality }: SharePosterProps) {
   const [exporting, setExporting] = useState(false);
   const [message, setMessage] = useState("");
   const [posterDataUrl, setPosterDataUrl] = useState("");
+  const [posterMounted, setPosterMounted] = useState(false);
   const champion = getNoodle(tournament.championId)!;
 
   function sideStages(side: "left" | "right") {
@@ -115,10 +116,15 @@ export function SharePoster({ tournament, personality }: SharePosterProps) {
   }
 
   async function generatePoster() {
-    if (!posterRef.current || exporting) return;
+    if (exporting) return;
     setExporting(true);
     setMessage("正在准备海报素材…");
     try {
+      if (!posterRef.current) {
+        setPosterMounted(true);
+        await new Promise<void>((resolve) => window.requestAnimationFrame(() => resolve()));
+      }
+      if (!posterRef.current) throw new Error("海报画布初始化失败");
       await document.fonts.ready;
       setMessage("正在绘制高清海报…");
       await inlinePosterImages(posterRef.current);
@@ -166,7 +172,7 @@ export function SharePoster({ tournament, personality }: SharePosterProps) {
           </section>
         </div>
       )}
-      <div className="poster-offscreen" aria-hidden="true">
+      {posterMounted && <div className="poster-offscreen" aria-hidden="true">
         <div className="share-poster" ref={posterRef}>
           <div className="poster-stars" />
           <div className="poster-topline"><span>NOODLE CUP</span><span>32 → 1</span></div>
@@ -198,7 +204,7 @@ export function SharePoster({ tournament, personality }: SharePosterProps) {
             <div className="poster-bottom-copy"><strong>NOODLE CUP</strong><span>为你的本命方便面办一场世界杯</span><small>32 款方便面，只能留下一碗 · 本结果仅代表个人口味</small></div>
           </div>
         </div>
-      </div>
+      </div>}
     </>
   );
 }

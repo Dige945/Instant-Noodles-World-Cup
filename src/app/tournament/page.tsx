@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { ChevronLeft, RotateCcw, Save } from "lucide-react";
 import { NoodleCard } from "@/components/noodle-card";
 import { ProgressHeader } from "@/components/progress-header";
@@ -15,6 +16,7 @@ function RoundIntro({ round, onDone }: { round: Match["round"]; onDone: () => vo
 }
 
 export default function TournamentPage() {
+  const router = useRouter();
   const hydrated = useTournamentStore((state) => state.hydrated);
   const tournament = useTournamentStore((state) => state.tournament);
   const chooseWinner = useTournamentStore((state) => state.chooseWinner);
@@ -28,15 +30,38 @@ export default function TournamentPage() {
   const right = getNoodle(match?.rightNoodleId);
   const shouldIntro = match?.matchIndex === 0 && introKey !== match.id;
 
+  useEffect(() => {
+    router.prefetch("/result/");
+  }, [router]);
+
+  useEffect(() => {
+    if (!tournament || !match) return;
+    const upcoming = tournament.matches.find((item) => (
+      item.id !== match.id &&
+      item.winnerId === null &&
+      item.leftNoodleId &&
+      item.rightNoodleId
+    ));
+    if (!upcoming) return;
+    [upcoming.leftNoodleId, upcoming.rightNoodleId].forEach((id) => {
+      const noodle = getNoodle(id);
+      if (!noodle) return;
+      const image = new window.Image();
+      image.decoding = "async";
+      image.src = noodle.image;
+      void image.decode().catch(() => undefined);
+    });
+  }, [match, tournament]);
+
   function select(id: string) {
     if (!tournament || !match || locked) return;
     setLocked(true); setSelectedId(id);
     window.setTimeout(() => {
       chooseWinner(match.id, id);
       const state = useTournamentStore.getState().tournament;
-      if (state?.championId) window.location.assign("/result/");
+      if (state?.championId) router.push("/result/");
       setSelectedId(null); setLocked(false);
-    }, 620);
+    }, 420);
   }
 
   function handleUndo() { if (!locked) { setSelectedId(null); undo(); } }
@@ -53,9 +78,9 @@ export default function TournamentPage() {
       <section className="battle-heading"><p className="section-label">CHOOSE YOUR FAVORITE</p><h1>哪一款更想吃？</h1></section>
       {storageWarning && <p className="warning-banner">{storageWarning}</p>}
       <section className="battle-stage" aria-live="polite">
-        <NoodleCard noodle={left} onChoose={() => select(left.id)} selected={selectedId === left.id} defeated={Boolean(selectedId && selectedId !== left.id)} disabled={locked} />
+        <NoodleCard key={left.id} noodle={left} onChoose={() => select(left.id)} selected={selectedId === left.id} defeated={Boolean(selectedId && selectedId !== left.id)} disabled={locked} />
         <div className="versus-mark"><span>VS</span><small>二选一</small></div>
-        <NoodleCard noodle={right} onChoose={() => select(right.id)} selected={selectedId === right.id} defeated={Boolean(selectedId && selectedId !== right.id)} disabled={locked} />
+        <NoodleCard key={right.id} noodle={right} onChoose={() => select(right.id)} selected={selectedId === right.id} defeated={Boolean(selectedId && selectedId !== right.id)} disabled={locked} />
       </section>
       <div className="battle-footer"><button className="button button-ghost" type="button" onClick={handleUndo} disabled={locked || tournament.snapshots.length === 0}><RotateCcw size={17} /> 撤销上一场</button><span><Save size={15} /> 进度已自动保存</span></div>
     </main>
