@@ -2,7 +2,7 @@
 
 一个移动端优先的纯前端网页小游戏。用户先从 48 款方便面完成 12 组小组赛和 8 款遗珠复活，再通过 31 场两两选择从 32 强中选出冠军，并生成四强榜、口味人格、完整比赛树和 1080 × 1920 分享海报。
 
-Cloudflare Pages 生产预览地址：<https://instant-noodle-world-cup.pages.dev/>
+网址：https://instantnoodlescup.fun/
 
 ## 技术架构
 
